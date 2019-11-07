@@ -1,5 +1,7 @@
 package Happy;
 
+import java.util.List;
+
 public class BusModel {
 	private String bustype;
 	private String bustypeId;
@@ -7,7 +9,13 @@ public class BusModel {
 	private String regno;
 	private String Station;
 	private int tripid;
-	
+	private List<BusModel> BList;
+	public List<BusModel> getBList() {
+		return BList;
+	}
+	public void setBList(List<BusModel> bList) {
+		BList = bList;
+	}
 	public BusModel()
 	{
 		

@@ -9,5 +9,5 @@ public interface Dao {
 	public int loginUser(UserModel u);
 	public int loginadmin(UserModel u);
 	public List<BusModel> getBustypes();
-	public List<BusModel> getstation();
+	public List<String> getstation();
 }

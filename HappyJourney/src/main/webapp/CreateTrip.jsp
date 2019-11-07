@@ -54,9 +54,17 @@
 
                                 <form:label path="bustype" class="l" style="font-family:Trebuchet MS;">Buses:&nbsp&nbsp&nbsp</form:label><br>
 
-                                <form:select path="bustype" id="bustype" name="bustype" onchange="loadBus()">
-                                <form:options  items="${b.bustype}"/>
-                                 </form:select>
+                               
+                                 
+                                 <form:select path="bustype" >
+
+  <c:forEach items="${Trip.BList}" var="user" varStatus="status">
+
+    <option value="US">${user.bustype}</option>
+    
+    </c:forEach>
+</form:select>
+                                 
 							</td>
                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                             <td>
