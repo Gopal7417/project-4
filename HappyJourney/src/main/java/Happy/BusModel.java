@@ -7,11 +7,34 @@ public class BusModel {
 	private String bustypeId;
 	private int busid;
 	private String regno;
-	private String station;
+	private String fstation;
+	private String tstation;
 	private int tripid;
+	private String fstanid;
+	private String tstanid;
+
+	public String getFstanid() {
+		return fstanid;
+	}
+	public void setFstanid(String fstanid) {
+		this.fstanid = fstanid;
+	}
+	public String getTstanid() {
+		return tstanid;
+	}
+	public void setTstanid(String tstanid) {
+		this.tstanid = tstanid;
+	}
 	private List<BusModel> BList;
 	private List<BusModel> SList;
+	private List<BusModel> RList;
 	
+	public List<BusModel> getRList() {
+		return RList;
+	}
+	public void setRList(List<BusModel> rList) {
+		RList = rList;
+	}
 	public List<BusModel> getSList() {
 		return SList;
 	}
@@ -53,13 +76,17 @@ public class BusModel {
 	public void setRegno(String regno) {
 		this.regno = regno;
 	}
-	
-	
-	public String getStation() {
-		return station;
+	public String getFstation() {
+		return fstation;
 	}
-	public void setStation(String station) {
-		this.station = station;
+	public void setFstation(String fstation) {
+		this.fstation = fstation;
+	}
+	public String getTstation() {
+		return tstation;
+	}
+	public void setTstation(String tstation) {
+		this.tstation = tstation;
 	}
 	public int getTripid() {
 		return tripid;

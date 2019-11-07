@@ -10,4 +10,5 @@ public interface Dao {
 	public int loginadmin(UserModel u);
 	public List<BusModel> getBustypes();
 	public List<BusModel> getStation();
+	public List<BusModel> getRegnos();
 }

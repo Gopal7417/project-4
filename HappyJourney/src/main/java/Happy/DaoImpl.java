@@ -93,7 +93,7 @@ String qry = "select password from admindetails where userid=?";
 		          List<BusModel> ulist = new ArrayList<BusModel>();  
 		          while(rs.next()){  
 		        	  BusModel b = new BusModel();
-		            //b.setBustypeId(rs.getString("BSTY_ID"));
+		            b.setBustypeId(rs.getString("BSTY_ID"));
 		             b.setBustype(rs.getString("BSTY_TITLE"));
 		            ulist.add(b);
 		             
@@ -106,7 +106,32 @@ String qry = "select password from admindetails where userid=?";
 	
 	public List<BusModel> getStation()
 	{
-		 String SQL = "select * from STATIONS";
+		 String SQL = "select stan_name,stan_id from stations";
+		 List<BusModel> buses = template.query(SQL,new ResultSetExtractor<List<BusModel>>(){
+		       
+		       public List<BusModel> extractData( ResultSet rs) throws SQLException, DataAccessException {
+		         
+		          
+		    	   List<BusModel> ulist = new ArrayList<BusModel>();  
+		          while(rs.next()){  
+		        	  BusModel b = new BusModel();
+		           //b.setBustypeId(rs.getString(1));
+		        	  b.setFstanid(rs.getString("stan_id"));
+			            b. setTstanid(rs.getString("stan_id"));
+		            b.setFstation(rs.getString("STAN_NAME"));
+		            b.setTstation(rs.getString("STAN_NAME"));
+		           // System.out.println(b);
+		        	  
+		             ulist.add(b);  
+		          }  
+		          return ulist;  
+		       }    	  
+		    });
+		    return buses;
+	}
+	public List<BusModel> getRegnos()
+	{
+		 String SQL = "select * from buses";
 		 List<BusModel> buses = template.query(SQL,new ResultSetExtractor<List<BusModel>>(){
 		       
 		       public List<BusModel> extractData( ResultSet rs) throws SQLException, DataAccessException {
@@ -117,9 +142,9 @@ String qry = "select password from admindetails where userid=?";
 		        	  BusModel b = new BusModel();
 		           //b.setBustypeId(rs.getString(1));
 		        	  
-		            b.setStation(rs.getString("STAN_NAME"));
-		             
-		            System.out.println(b);
+		            b.setRegno(rs.getString("BUS_REGNO"));
+		           
+		           // System.out.println(b);
 		        	  
 		             ulist.add(b);  
 		          }  

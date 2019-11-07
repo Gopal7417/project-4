@@ -57,7 +57,7 @@
                                  <form:select path="bustype" >
   <c:forEach items="${Trip.BList}" var="user" varStatus="status">
 
-    <option value="US">${user.bustype}</option>
+    <option value="${user.bustypeId}">${user.bustype}</option>
     
     </c:forEach>
  
@@ -75,11 +75,11 @@
                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 							</td>
                             <td>
-                                <form:label path="station" class="l" style="font-family: Trebuchet MS;">From Stations:&nbsp&nbsp&nbsp</form:label><br>
-                                  <form:select path="station" id="sFrom" name="sFrom" > 
+                                <form:label path="fstation" class="l" style="font-family: Trebuchet MS;">From Stations:&nbsp&nbsp&nbsp</form:label><br>
+                                  <form:select path="fstation" id="sFrom" name="sFrom" > 
                                   <c:forEach items="${Trip.SList}" var="user" varStatus="status">
 
-    <option value="US">${user.station}</option>
+    <option value="${user.fstanid}">${user.fstation}</option>
     
     </c:forEach>
                                                
@@ -88,9 +88,13 @@
                                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                             </td>
                             <td>
-                                <form:label  path="Station" class="l" style="font-family: Trebuchet MS;">To Stations:&nbsp&nbsp&nbsp</form:label><br>
-                                <form:select  path="Station" id="sTo" name="sTo" onchange="addRow()">
-                                                                 <form:options  items="${s}"/>
+                                <form:label  path="tstation" class="l" style="font-family: Trebuchet MS;">To Stations:&nbsp&nbsp&nbsp</form:label><br>
+                                <form:select  path="tstation" id="sTo" name="sTo" onchange="addRow()">
+                                                                 <c:forEach items="${Trip.SList}" var="user" varStatus="status">
+
+    <option value="${user.tstanid}">${user.tstation}</option>
+    
+    </c:forEach>
                                 
                                 </form:select>
                       

@@ -24,7 +24,7 @@ public class AdminController {
 		  
 	    ModelAndView mav = new ModelAndView("CreateTrip");
 	    BusModel b=new BusModel();
-	   // BusModel b2=new BusModel();
+	  
 	 List<BusModel> blist=rgDAO.getBustypes();
 	    List<BusModel> Slist=rgDAO.getStation();
 	  b.setBList(blist);
@@ -34,23 +34,49 @@ public class AdminController {
 
 	    return mav;
 	  }
-	  /*
-	  @ModelAttribute("b")
-	  public List<BusModel> getbus(){
-		  List<BusModel> b=rgDAO.getBustypes();
+	@RequestMapping(value = "/BUSWISE1", method = RequestMethod.GET)
+	  public ModelAndView buswise(HttpServletRequest request, HttpServletResponse response) {
+		  
+	    ModelAndView mav = new ModelAndView("BUSWISE1");
+	    BusModel b=new BusModel();
+		  
+		 List<BusModel> blist=rgDAO.getRegnos();
+	   
+		 b.setRList(blist);
+	   
+	    
+	    mav.addObject("Trip",b);
 
-		  System.out.println(b);
-		  return b;
+	    return mav;
 	  }
-	  
-	  @ModelAttribute("s")
-	  public List<String> getstation(){
-		  List<String> b=rgDAO.getstation();
+	  @RequestMapping(value = "/TripWise", method = RequestMethod.GET)
+	  public ModelAndView tripwise(HttpServletRequest request, HttpServletResponse response) {
 		  
-		  System.out.println(b);
-		 
-		  return b;
+	    ModelAndView mav = new ModelAndView("TripWise");
+	    BusModel b=new BusModel();
 		  
-	  }*/
+	    List<BusModel> Slist=rgDAO.getStation();
+		
+		   b.setSList(Slist);
+		    
+		    mav.addObject("Trip",b);
+
+		    return mav;
+		  }
+	
+	  @RequestMapping(value = "/CustomerMainPage", method = RequestMethod.GET)
+	  public ModelAndView createtrp(HttpServletRequest request, HttpServletResponse response) {
+		  
+	    ModelAndView mav = new ModelAndView("CustomerMainPage");
+	    BusModel b=new BusModel();
 	  
+	
+	    List<BusModel> Slist=rgDAO.getStation();
+	 
+	   b.setSList(Slist);
+	    
+	    mav.addObject("Trip",b);
+
+	    return mav;
+	  }
 }

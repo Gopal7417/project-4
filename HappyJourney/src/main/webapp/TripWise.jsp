@@ -1,4 +1,4 @@
- <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ text-align: center;
 </head>
     <body onload="loadstops()">
         
-<img src="<c:url value="/resources/images/bus logo.png"/>"align="right" width=20% height= 20%>
+        <img src="bus logo.png" align="right" height=20% width=20% onclick="">
 <br></br><br><br><br><br>
 <div class="nav">
 
@@ -94,24 +94,40 @@ text-align: center;
 <li><a href="BUSWISE1" target="_self">Bus Wise</a></li>
 <li><a href="Chart" target="_self">Chart</a></li>
 
-
 </ul></li>
-
+      
 <li><a href="Cancellations.jsp">CANCELLATIONS</a></li>
+</ul>
+
 </ul>
 </div>
        
       
+        
     <br></br>
         <br></br>
         <div align="center">
- <select id="fr">
-                  <option>----select----</option>
-                
-             </select>
+        <form:form action="/" modelAttribute="Trip" method="POST">
+ 
+                 <form:select path="fstation" id="sFrom" name="sFrom" > 
+                                  <c:forEach items="${Trip.SList}" var="user" varStatus="status">
+
+     <option value="${user.fstanid}">${user.fstation}</option>
+    
+    </c:forEach>
+                                     
+
+             </form:select>
              
             
-             </select>
+              <form:select path="tstation" id="sFrom" name="sFrom" > 
+                                  <c:forEach items="${Trip.SList}" var="user" varStatus="status">
+
+    <option value="${user.tstanid}">${user.tstation}</option>
+    </c:forEach>
+                                     
+
+             </form:select>
            
   <button onclick="bookings1()" style="background-color:#0CADA0;width:90px;
 height:39px;"> Search</button>
@@ -129,6 +145,7 @@ height:39px;"> Search</button>
  <th width="20%">   Travelling Date</th>
                   </tr>
           </table>
+          </form:form>
               </div> 
     <script>
       
