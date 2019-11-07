@@ -100,13 +100,17 @@ height:39px;
 <br></br>
         <br></br>
    <div align="center">
-       
-            <select name="bus" id="busid">
-          </select>     
- 
-        
-          <button onclick="cal()" style="background-color:#0CADA0;width:90px;
-height:39px;" >submit</button>
+       <form:form action="/" modelAttribute="Trip" method="POST">
+            
+           
+              <form:select path="regno">
+  <c:forEach items="${Trip.RList}" var="user" varStatus="status">
+
+    <option value="${user.regno}">${user.regno}</option>
+    
+    </c:forEach>
+        </form:select>
+          <form:button onclick="cal()" style="background-color:#0CADA0;width:90px;height:39px;" >submit</form:button>
         <br></br>
         <br></br>
         
@@ -121,6 +125,7 @@ height:39px;" >submit</button>
                     <th width="20%">Travelling Date</th>
                   </tr>
           </table>
+          </form:form>
          </div>
        
                <script language="javascript">

@@ -58,12 +58,12 @@ public class BusController {
 	    ModelAndView mav = new ModelAndView("CustomerChangePswd");
 	    return mav;
 	  }
-	  @RequestMapping(value = "/CustomerMainPage", method = RequestMethod.GET)
+	 /* @RequestMapping(value = "/CustomerMainPage", method = RequestMethod.GET)
 	  public ModelAndView cmainpage(HttpServletRequest request, HttpServletResponse response) {
 		  
 	    ModelAndView mav = new ModelAndView("CustomerMainPage");
 	    return mav;
-	  }
+	  }*/
 	  
 	  @RequestMapping(value = "/upcoming", method = RequestMethod.GET)
 	  public ModelAndView upcoming(HttpServletRequest request, HttpServletResponse response) {
@@ -109,13 +109,7 @@ public class BusController {
 	    ModelAndView mav = new ModelAndView("AdminChangePswd");
 	    return mav;
 	  }
-	  @RequestMapping(value = "/BUSWISE1", method = RequestMethod.GET)
-	  public ModelAndView buswise(HttpServletRequest request, HttpServletResponse response) {
-		  
-	    ModelAndView mav = new ModelAndView("BUSWISE1");
-	    return mav;
-	  }
-	  
+	
 	  @RequestMapping(value = "/BookingsDateWise", method = RequestMethod.GET)
 	  public ModelAndView datewise(HttpServletRequest request, HttpServletResponse response) {
 		  
@@ -146,10 +140,5 @@ public class BusController {
 	    return mav;
 	  }
 	  
-	  @RequestMapping(value = "/TripWise", method = RequestMethod.GET)
-	  public ModelAndView tripwise(HttpServletRequest request, HttpServletResponse response) {
-		  
-	    ModelAndView mav = new ModelAndView("TripWise");
-	    return mav;
-	  }
+	
 }

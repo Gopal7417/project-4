@@ -27,17 +27,17 @@
 <br></br><br><br><br><br>
 <div class="nav">
 <ul>
-<li><a href="CustomerMainPage.jsp">HOME</a>
-<li><a href="CustomerMainPage.jsp" target="_self">PROFILE</a>
+<li><a href="CustomerMainPage">HOME</a>
+<li><a href="CustomerMainPage" target="_self">PROFILE</a>
 <ul>
-<li><a href="CustomerChangePswd.jsp" target="_self">Change Password</a></li>
-<li><a href="Logout.jsp" target="_self">Logout</a></li>
+<li><a href="CustomerChangePswd" target="_self">Change Password</a></li>
+<li><a href="Logou" target="_self">Logout</a></li>
 
 </ul>
-<li><a href="CustomerMainPage.jsp">MY BOOKINGS</a>
+<li><a href="CustomerMainPage">MY BOOKINGS</a>
 <ul>
-<li><a href="upcoming.jsp" target="_self">Upcoming Trips</a></li>
-<li><a href="CompletedTrips.jsp" target="_self">Completed Trips</a></li>
+<li><a href="upcoming" target="_self">Upcoming Trips</a></li>
+<li><a href="CompletedTrips" target="_self">Completed Trips</a></li>
 
 </ul></li>
 <br></br>
@@ -46,26 +46,25 @@
 
 
 <br><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<div align="center">
-<input type="button" style="background-color:#0CADA0;width:110px;height:40px; color:#FFFFFF;" value="FROM:" style="width: 150%; height: 150px;" style="text-size:100%;"/>
+  <form:form action="/" modelAttribute="Trip" method="POST">
+  <form:label path="fstation" class="l" style="font-family: Trebuchet MS;">From Stations:&nbsp&nbsp&nbsp</form:label><br>
+                                  <form:select path="fstation" id="sFrom" name="sFrom" > 
+                                  <c:forEach items="${Trip.SList}" var="user" varStatus="status">
 
+    <option value="${user.fstanid}">${user.fstation}</option>
+    
+    </c:forEach>
+      </form:select>
+     <form:label  path="tstation" class="l" style="font-family: Trebuchet MS;">To Stations:&nbsp&nbsp&nbsp</form:label><br>
+                                <form:select  path="tstation" id="sTo" name="sTo" onchange="addRow()">
+                                                                 <c:forEach items="${Trip.SList}" var="user" varStatus="status">
 
-
-<select id="fr" >
-   <option value="">--select--</option>
-        
-    </select>
-
-
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" style=" color:#FFFFFF; background-color:#0CADA0;width:110px;
-height:40px;" value="TO:">
-
- <select id="to">
-        <option value="">--select--</option>
-   
-    </select>
-
+    <option value="${user.tstanid}">${user.tstation}</option>
+    
+    </c:forEach>
+    </form:select>
+  </form:form>
+<!--
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="Button" style=" color:#FFFFFF; background-color:#0CADA0;width:110px;
 height:40px;" value="DATE:">
 <input type="date" name="input" id="da"style="height:40px;"/>
@@ -115,8 +114,22 @@ height:40px;"><option value=""></option></select>
         </div>
 
     </div>
+<div style="margin-left:168px;">
+<input type="button" style="background-color:#0CADA0; color:#FFFFFF; width:110px;
+height:40px;" value="Total Amount:">
+<input type="text" readOnly=true id="fare">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" style="background-color:#0CADA0; color:#FFFFFF; width:110px;
+height:40px;" value="Payment Type:">
+<select name="mode" id="mode"><option>UPI</option><option>PAYTM</option><option>DEBIT CARD</option><option>NET BANKING</option></select>
+</div>
+<br>
+<div align="center">
+<button  align="center" class="btn btn-success book_ticket" style="background-color:#0CADA0;width:110px;
+height:40px;">Book Ticket</button>
+</div>
 
-
+  -->
 
 </body>
 
@@ -127,7 +140,7 @@ height:40px;"><option value=""></option></select>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 
 
-<!-- User Defined Script Start   -->
+<!-- User Defined Script Start  
 
 <script>  
 
@@ -353,7 +366,7 @@ height:40px;" value="Payment Type:">
 height:40px;">Book Ticket</button>
 </div>
 
-
+ -->
 
 <!-- User Defined Script End   -->
 

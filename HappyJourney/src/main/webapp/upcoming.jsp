@@ -16,17 +16,17 @@
 <br></br><br><br><br><br>
 <div class="nav">
 <ul>
-<li><a href="CustomerMainPage.jsp">HOME</a>
-<li><a href="CustomerMainPage.jsp" target="_self">PROFILE</a>
+i><a href="CustomerMainPage" target="_self">PROFILE</a>
 <ul>
-<li><a href="CustomerChangePswd.jsp" target="_self">Change Password</a></li>
-<li><a href="Logout.jsp" target="_self">Logout</a></li>
+<li><a href="CustomerChangePswd" target="_self">Change Password</a></li>
+<li><a href="Logou" target="_self">Logout</a></li>
 
 </ul>
-<li><a href="CustomerMainPage.jsp">MY BOOKINGS</a>
+<li><a href="CustomerMainPage">MY BOOKINGS</a>
 <ul>
-<li><a href="upcoming.jsp" target="_self">Upcoming Trips</a></li>
-<li><a href="CompletedTrips.jsp" target="_self">Completed Trips</a></li>
+<li><a href="upcoming" target="_self">Upcoming Trips</a></li>
+<li><a href="CompletedTrips" target="_self">Completed Trips</a></li>
+
 
 </ul></li>
 <br></br>
