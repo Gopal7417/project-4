@@ -104,24 +104,24 @@ String qry = "select password from admindetails where userid=?";
 		    return buses;
 	}
 	
-	public List<String> getstation()
+	public List<BusModel> getStation()
 	{
 		 String SQL = "select * from STATIONS";
-		    List <String> buses = template.query(SQL,new ResultSetExtractor<List<String>>(){
+		 List<BusModel> buses = template.query(SQL,new ResultSetExtractor<List<BusModel>>(){
 		       
-		       public List<String> extractData( ResultSet rs) throws SQLException, DataAccessException {
+		       public List<BusModel> extractData( ResultSet rs) throws SQLException, DataAccessException {
 		         
 		          
-		          List<String> ulist = new ArrayList<String>();  
+		    	   List<BusModel> ulist = new ArrayList<BusModel>();  
 		          while(rs.next()){  
-		        	 // BusModel b = new BusModel();
+		        	  BusModel b = new BusModel();
 		           //b.setBustypeId(rs.getString(1));
 		        	  
-		            // b.setStation(rs.getString("STAN_NAME"));
+		            b.setStation(rs.getString("STAN_NAME"));
 		             
-		            // System.out.println(b);
+		            System.out.println(b);
 		        	  
-		             ulist.add(rs.getString("STAN_NAME"));  
+		             ulist.add(b);  
 		          }  
 		          return ulist;  
 		       }    	  

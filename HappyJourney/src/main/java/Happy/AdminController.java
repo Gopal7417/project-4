@@ -24,10 +24,14 @@ public class AdminController {
 		  
 	    ModelAndView mav = new ModelAndView("CreateTrip");
 	    BusModel b=new BusModel();
-	    List<BusModel> blist=rgDAO.getBustypes();
-	
-	    b.setBList(blist);
+	   // BusModel b2=new BusModel();
+	 List<BusModel> blist=rgDAO.getBustypes();
+	    List<BusModel> Slist=rgDAO.getStation();
+	  b.setBList(blist);
+	   b.setSList(Slist);
+	    
 	    mav.addObject("Trip",b);
+
 	    return mav;
 	  }
 	  /*
