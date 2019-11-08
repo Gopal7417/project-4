@@ -119,8 +119,12 @@ public class RegisterDAOImpl implements RegisterDAO {
 		
 		
 	}*/
-	public JSONArray names() {
-		String sql1 = "select * from stations";
+	public JSONArray bustypes() {
+		
+		
+		String sql1 = "select bus_regno from buses where bus_bsty_id = 'VLSS'";
+		
+		
 		JSONArray stations = template.query(sql1,new ResultSetExtractor<JSONArray>(){
 	         
 	         public JSONArray extractData(ResultSet rs) throws SQLException, DataAccessException {

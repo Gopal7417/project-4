@@ -12,7 +12,7 @@
 
         $(document).ready(function () {
 			
-   		 $('#id_btn2').click(function(){
+   		 $('#three').change(function(){
         $.ajax({
                       type: "POST",
                       data:{ "b": $("#three").val()},

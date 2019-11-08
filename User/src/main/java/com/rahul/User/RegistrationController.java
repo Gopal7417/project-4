@@ -101,7 +101,7 @@ public class RegistrationController {
       public ModelAndView addUsers(@ModelAttribute("usersForm") UsersForm uf) {	
 			String me = uf.getOne();
 			String me2 = uf.getTwo();
-			List<UserModel> ulist = rgDAO.names();	
+			List<UserModel> ulist = rgDAO.bustypes();	
 			 ModelAndView mav = new ModelAndView("multiusers");
 			 uf.setNamesList(ulist);
 			 uf.setOne(me);
@@ -113,23 +113,13 @@ public class RegistrationController {
 
 				  return mav;
 		}
-	  
 
-	  @RequestMapping(value="/hello")
-	  @ResponseBody
-	  public List oo() {
-		  JSONArray jsonArray = rgDAO.names();
-		  
-		  
-		  List new1 = rgDAO.getAllUsers();
-		 
-	 return new1;
-	  }
+
 	  
 	  @RequestMapping(value = "/something", method = RequestMethod.GET)
 	  @ResponseBody
 	  public void helloWorld(HttpServletRequest request,HttpServletResponse response) throws IOException  {  
-       JSONArray jsonArray = rgDAO.names(); 
+       JSONArray jsonArray = rgDAO.bustypes(); 
        request.getParameter("three"); 
       // System.out.println(uf.getThree());
        System.out.println(jsonArray);
@@ -142,7 +132,7 @@ public class RegistrationController {
 		  String tt=request.getParameter("b"); 
 		  System.out.println(tt);
 		  
-		    JSONArray jsonArray = rgDAO.names(); 
+		    JSONArray jsonArray = rgDAO.bustypes(); 
 		    response.getWriter().println(jsonArray);
 
 	  }

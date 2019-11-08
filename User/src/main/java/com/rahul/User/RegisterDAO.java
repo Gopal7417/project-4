@@ -7,5 +7,5 @@ public interface RegisterDAO {
 	public int validateCredentials(LoginModel lm);
 	public List<UserModel> getAllUsers();
 	public void addUsers(UsersForm uf);
-	public JSONArray names();
+	public JSONArray bustypes();
 }
